@@ -5,10 +5,12 @@ import {
   Text,
   View,
   TextInput,
-  Button
+  Button,
+  Keyboard
 } from 'react-native';
 
 import SegmentedControlTab from 'react-native-segmented-control-tab';
+import dismissKeyboard from 'react-native-dismiss-keyboard';
 
 export default class Cal extends Component
 {
@@ -37,23 +39,48 @@ export default class Cal extends Component
 
     render()
     {
+      var styles = StyleSheet.create({
+        titleText: {
+          fontSize: 28,
+          fontWeight: 'bold',
+          textAlign: 'center'
+        },
+        textInputBorder: {
+          width:250,
+          borderWidth: 2,
+          borderColor: '#000000',
+        },
+        rowLayout:{
+          marginVertical:10,
+          justifyContent: "space-between",
+          flexDirection:'row',
+          alignItems:'center' 
+        },
+      });
+
       return(
-        <View>
+        <View style={{paddingLeft:10,paddingRight:10}}>
           <View>
-            <Text>Tip Calculator</Text>
+            <Text
+            style={{
+                fontSize: 28,
+                fontWeight: 'bold',
+                textAlign: 'center'
+              }}>Tip Calculator</Text>
           </View>
 
-          <View>
-            <Text>Bill Amount</Text>
+          <View style={styles.rowLayout}>
+            <Text style={{fontSize: 20}}>Bill Amount:</Text>
             <TextInput
+            style={styles.textInputBorder}
+            autoFocus={true}
             keyboardType='numeric'
-            placeholder="Tip Amount"
             placeholderTextColor="gray"
             returnKeyType="done"
             onChangeText={billAmount => this.handleBillAmountChange(billAmount)}/>
           </View>
 
-          <View>
+          <View style={{marginVertical:10}}>
               <SegmentedControlTab
                   values={this.segmentValue()}
                   selectedIndex={this.state.selectedIndex}
@@ -75,6 +102,15 @@ export default class Cal extends Component
       );
     }
 
+    // componentDidMount()
+    // {
+    //   this.textInput.focus();
+    // }
+    // 
+    // componentWillUnmount()
+    // {
+    //   dismissKeyboard();
+    // }
     handleTabChange = (index) => {
       this.setState({
         selectedIndex: index,

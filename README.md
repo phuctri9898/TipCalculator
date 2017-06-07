@@ -6,7 +6,7 @@ Submitted by: **Tri Huynh**
 
 Time spent: **10** hours spent in total
 
-**Note** we do not require build this app for all Mobile OS, just based on what is fit for you.
+**Note** we only build and test this app for Android OS, just based on is.
 
 ## Usage 
 
@@ -19,7 +19,6 @@ npm install
 **Start the application in development mode**
 ```
 react-native run-android
-react-native run-ios
 ```
 
 ## User Stories
@@ -34,17 +33,17 @@ The following **optional** features are implemented:
 * [ ] UI animations
 * [ ] Settings page to change the default tip percentage.
 * [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Use flexbox to center 2 view in same line
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/XPct148.gif' title='Video Walkthrough Tip Calculator React native' width='' alt='Video Walkthrough Tip Calculator React native' />
+<img src='http://i.imgur.com/e1Gfn7N.gif' title='Video Walkthrough Tip Calculator React native' width='' alt='Video Walkthrough Tip Calculator React native' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -54,7 +53,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Tri Huynh]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
